@@ -82,7 +82,7 @@ void normalize(char *m, char *r){
 
     while (i < strlen(m)){
         if (m[i] == '(' || m[i] == ')' || m[i] == ',' || (m[i] >= 48 && m[i] <= 57) || m[i] == '.'){
-            //this if is to separe '00' to '0 0' , other conditions are for constrains
+            //this if is to separe '00' to '0 0' , other conditions are for constraint
             if ((m[i-1] >= 48 && m[i-1] <= 57) && (m[i] != ',' && m[i] != '(' && m[i] != ')')){ 
                 r[rI] = ' ';
                 rI++;
