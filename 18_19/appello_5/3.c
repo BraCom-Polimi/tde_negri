@@ -75,6 +75,7 @@ int max(char *s){
         printf ("mem er\n");
         return 0;
     }
+    //HASHMAP
     for (i=0; i<counter; i++){
         v2[v[i]]++;
     }
