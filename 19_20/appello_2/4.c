@@ -3,29 +3,35 @@
 #include <stdbool.h>
 
 int main(int argc, char **argv){
-    //I dont know
+
     if (argc < 2)
         return 0;
 
     int c = 0, n, j;
     int *v;
+    char l;
     FILE *f = fopen(argv[1], "r");
 
     if (f == NULL)
         printf ("erore\n");
     else{
         printf ("sequenza file:\n");
+	fscanf (f, "%d", &n);
+	c++;
+	printf ("%d ", n);
         while (feof(f) != 1){
-            fscanf (f, "%d", &n);
-            printf ("%d ", n);
-            c++;
+            //fscanf (f, "%d", &n);
+	    l = fgetc(f);
+	    if (l != EOF && l != ' '){
+           	printf ("%c ", l);
+            	c++;
+	    }	
         }
-        //c è la lunghezza del file, faccio -- perchè la feof fa un giro di troppo
-        c--;
+
         printf ("\nla lunghezza del file è: %d\n", c);
 
         fclose(f);
-        f = fopen("v.txt", "r");
+        f = fopen(argv[1], "r");
 
         if (f == NULL)
             printf ("errore\n");
@@ -36,8 +42,7 @@ int main(int argc, char **argv){
                 printf ("errore allocazione\n");
             j = 0;
             while (j < c){
-                fscanf (f, "%d", &n);
-                v[j] = n;
+                fscanf (f, "%d", &v[j]); 
                 j++;
             }
 

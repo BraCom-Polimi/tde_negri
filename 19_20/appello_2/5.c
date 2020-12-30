@@ -51,5 +51,5 @@ void riempiArray(int *array){
     for (i=0; i<dim; i++){
         printf ("%d ", array[i]);
     }
-    printf ("\n")
-;}
+    printf ("\n");
+}
