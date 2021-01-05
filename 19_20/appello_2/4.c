@@ -16,9 +16,9 @@ int main(int argc, char **argv){
         printf ("erore\n");
     else{
         printf ("sequenza file:\n");
-	fscanf (f, "%d", &n);
+	fscanf (f, "%c", &l);
 	c++;
-	printf ("%d ", n);
+	printf ("%c ", n);
         while (feof(f) != 1){
             //fscanf (f, "%d", &n);
 	    l = fgetc(f);
@@ -42,7 +42,8 @@ int main(int argc, char **argv){
                 printf ("errore allocazione\n");
             j = 0;
             while (j < c){
-                fscanf (f, "%d", &v[j]); 
+                fscanf (f, "%c", &l);
+	       	v[j] = atoi(&l);	
                 j++;
             }
 
